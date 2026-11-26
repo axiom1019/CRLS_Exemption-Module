@@ -1,0 +1,38 @@
+.vp { min-height: 100vh; background: var(--bg); }
+.vp-wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.vp-mast { background: #fff; border-bottom: 1px solid var(--line); }
+.vp-mast .vp-wrap { display: flex; align-items: center; gap: 14px; padding-top: 14px; padding-bottom: 14px; }
+.vp-mast img { width: 60px; height: 60px; flex: none; }
+.vp-id { display: flex; flex-direction: column; line-height: 1.25; }
+.vp-mast small { color: var(--muted); font-size: 0.78rem; }
+.vp-mast strong { color: var(--navy); font-size: 1rem; }
+.vp-mast em { font-style: normal; color: var(--red); font-weight: 700; font-size: 0.9rem; }
+.vp-band { height: 6px; background: linear-gradient(90deg, var(--navy-dark) 0 70%, var(--red) 70% 100%); }
+.vp-main { padding-top: 24px; padding-bottom: 40px; }
+.vp-form h1 { color: var(--navy-dark); margin-bottom: 6px; }
+.vp-form p { margin-bottom: 16px; }
+.code-field { font-size: 1.25rem !important; letter-spacing: 0.12em; text-transform: uppercase; font-family: ui-monospace, Menlo, Consolas, monospace; }
+.vp-result { overflow: hidden; }
+.vp-status { display: flex; align-items: center; gap: 14px; padding: 18px 20px; color: #fff; }
+.vp-status.ok { background: var(--green); }
+.vp-status.bad { background: var(--red); }
+.vp-status.wait { background: #8a5a12; }
+.vp-status h1 { font-size: 1.25rem; color: #fff; }
+.vp-k { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.92; }
+.vp-icon { width: 46px; height: 46px; flex: none; border-radius: 999px; background: rgb(255 255 255 / 20%); display: grid; place-items: center; font-size: 1.5rem; font-weight: 700; }
+.vp-revoked { background: var(--red-soft); color: #7f1d1d; padding: 12px 20px; font-size: 0.95rem; }
+.vp-kv { margin: 14px 0 6px; }
+@media (max-width: 600px) { .vp-kv dt { font-size: 0.8rem; } }
+.vp-kv dd b { font-size: 1.05rem; }
+.vp-docs { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 14px; }
+.vp-docs h2 { font-size: 1rem; margin-bottom: 8px; }
+.vp-check { margin-top: 12px; font-size: 0.92rem; }
+.vp-check summary { cursor: pointer; color: var(--navy); font-weight: 700; }
+.vp-check p { margin: 8px 0; }
+.vp-foot { margin-top: 22px; color: var(--muted); font-size: 0.82rem; }
+.vp-foot summary { cursor: pointer; font-weight: 700; }
+.vp-foot p { margin: 6px 0; }
+@media (max-width: 600px) {
+  .vp-mast strong { font-size: 0.88rem; }
+  .vp-status h1 { font-size: 1.1rem; }
+}
