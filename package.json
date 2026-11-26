@@ -1,0 +1,38 @@
+{
+  "name": "certificate-verification",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "vite build && APP_ENTRY=verify vite build",
+    "build:backend": "node scripts/build-backend.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p backend/tsconfig.json --noEmit",
+    "test": "vitest run",
+    "push:staging": "npm run build && node scripts/assemble.mjs staging staff && node scripts/assemble.mjs staging verify && (cd deploy/staging/staff && clasp push --force) && (cd deploy/staging/verify && clasp push --force)",
+    "deploy:staging": "npm run push:staging && node scripts/deploy.mjs staging staff && node scripts/deploy.mjs staging verify",
+    "push:production": "npm run build && node scripts/assemble.mjs production staff && node scripts/assemble.mjs production verify && (cd deploy/production/staff && clasp push --force) && (cd deploy/production/verify && clasp push --force)",
+    "deploy:production": "npm run push:production && node scripts/deploy.mjs production staff && node scripts/deploy.mjs production verify"
+  },
+  "dependencies": {
+    "qrcode-generator": "2.0.4",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/google-apps-script": "2.0.16",
+    "@types/node": "26.6.7",
+    "@types/react": "19.3.1",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "esbuild": "0.28.2",
+    "typescript": "6.0.3",
+    "vite": "8.3.8",
+    "vite-plugin-singlefile": "2.3.4",
+    "vitest": "5.1.1"
+  }
+}
